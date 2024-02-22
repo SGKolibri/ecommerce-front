@@ -17,16 +17,30 @@ const Desc = styled.p`
     color: #aaa;
 `;
 
-export default function Featured () {
+const Wrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+`;
+
+export default function Featured() {
 
     return (
         <>
             <Bg>
                 <Center>
-                    <Title>Pro anywhere</Title>
-                    <Desc>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </Desc>
+                    <Wrapper>
+                        <div>
+                            <Title>Pro anywhere</Title>
+                            <Desc>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                            </Desc>
+                        </div>
+                        <div>
+                            <img src="/pro-anywhere.png" alt="Pro anywhere" />
+                        </div>
+                    </Wrapper>
+
                 </Center>
             </Bg>
         </>
