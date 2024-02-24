@@ -11,3 +11,12 @@ export default function Home() {
     </>
   );
 }
+
+
+export function GetServerSidePros() {
+  return {
+    props: {
+      title: "Home",
+    },
+  };
+}
