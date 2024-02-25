@@ -1,6 +1,9 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Center from "@/components/Center";
+import {useContext, useState} from "react";
+import {CartContext} from "@/components/CartContext";
+import BarsIcon from "@/components/icons/Bars";
 
 const StyledHeader = styled.header`
   background-color: #222;
@@ -60,18 +63,23 @@ const NavButton = styled.button`
 `;
 
 export default function Header() {
+  const {cartProducts} = useContext(CartContext);
+  const [mobileNavActive,setMobileNavActive] = useState(false);
   return (
     <StyledHeader>
       <Center>
         <Wrapper>
           <Logo href={'/'}>Ecommerce</Logo>
-          <StyledNav >
+          <StyledNav mobileNavActive={mobileNavActive}>
             <NavLink href={'/'}>Home</NavLink>
             <NavLink href={'/products'}>All products</NavLink>
             <NavLink href={'/categories'}>Categories</NavLink>
             <NavLink href={'/account'}>Account</NavLink>
-            <NavLink href={'/cart'}>Cart (0)</NavLink>
+            <NavLink href={'/cart'}>Cart ({cartProducts.length})</NavLink>
           </StyledNav>
+          <NavButton onClick={() => setMobileNavActive(prev => !prev)}>
+            <BarsIcon />
+          </NavButton>
         </Wrapper>
       </Center>
     </StyledHeader>
